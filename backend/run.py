@@ -20,7 +20,8 @@ app = Flask(__name__)
 
 frontend_url = os.getenv("FRONTEND_URL", "http://localhost:3000")
 print("Allowing cors for frontend URL:", frontend_url)
-CORS(app, resources={r"/*": {"origins": frontend_url}})
+# Allow CORS from specific origins
+CORS(app, resources={r"/*": {"origins": ["http://localhost:3000", "https://adobe-gensolve-1.vercel.app"]}})
 
 def image_to_svg(img, contours_to_draw, circle_info, bounding_box, linesToDraw, filename="output.svg"):
     height, width = img.shape[:2]
