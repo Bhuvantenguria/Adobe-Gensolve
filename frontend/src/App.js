@@ -61,6 +61,7 @@ const DrawingApp = () => {
 
   const downloadResults = async () => {
     setIsLoading(true);
+    setRefreshTrigger(prev => prev + 1);
     const csvData = generateCSVData();
     const blob = new Blob([csvData], { type: "text/csv" });
     const formData = new FormData();
@@ -85,7 +86,7 @@ const DrawingApp = () => {
       a.click();
       window.URL.revokeObjectURL(url);
 
-      setRefreshTrigger(prev => prev + 1);
+      
     } catch (error) {
       console.error("Error during file download:", error);
     } finally {
