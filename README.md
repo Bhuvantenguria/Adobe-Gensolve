@@ -31,7 +31,7 @@ This project is an advanced web application that allows users to draw on a canva
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/DrawingApp.git
-   cd DrawingApp
+   cd frontend
    ```
 
 2. Install dependencies:
@@ -57,7 +57,7 @@ This project is an advanced web application that allows users to draw on a canva
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/yourusername/svg-shape-detection.git
-   cd svg-shape-detection
+   cd backend
    ```
 
 2. **Install Dependencies**:
@@ -69,7 +69,7 @@ This project is an advanced web application that allows users to draw on a canva
 3. **Run the Project**:
    You can run the project using:
    ```bash
-   python main.py
+   python run.py
    ```
 
 ## Usage
