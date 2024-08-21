@@ -30,7 +30,7 @@ This project is an advanced web application that allows users to draw on a canva
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/DrawingApp.git
+   git clone https://github.com/Bhuvantenguria/Adobe-Gensolve.git
    cd frontend
    ```
 
@@ -56,7 +56,7 @@ This project is an advanced web application that allows users to draw on a canva
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/svg-shape-detection.git
+   git clone https://github.com/Bhuvantenguria/Adobe-Gensolve.git
    cd backend
    ```
 
