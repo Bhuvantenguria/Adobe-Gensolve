@@ -10,7 +10,6 @@ firebase-admin==6.2.0
 Pillow==10.0.1
 requests==2.31.0
 python-multipart==0.0.6
-nodemailer==0.0.1
 flask-mail==0.9.1
 flask-jwt-extended==4.5.3
 bcrypt==4.0.1

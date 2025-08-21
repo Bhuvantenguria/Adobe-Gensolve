@@ -1,4 +1,8 @@
-from flask_mail import Mail, Message
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
 from flask import current_app
 import os
 from datetime import datetime
@@ -6,23 +10,48 @@ from datetime import datetime
 class EmailService:
     def __init__(self, app):
         """Initialize email service with Flask app"""
-        self.mail = Mail(app)
+        self.app = app
+        self.smtp_server = app.config.get('MAIL_SERVER', 'smtp.gmail.com')
+        self.smtp_port = app.config.get('MAIL_PORT', 587)
+        self.smtp_username = app.config.get('MAIL_USERNAME')
+        self.smtp_password = app.config.get('MAIL_PASSWORD')
+        self.use_tls = app.config.get('MAIL_USE_TLS', True)
         
     def send_email(self, to_email, subject, body, html_body=None):
-        """Send email"""
+        """Send email using SMTP"""
         try:
-            msg = Message(
-                subject=subject,
-                recipients=[to_email],
-                sender=current_app.config['MAIL_USERNAME']
-            )
+            if not all([self.smtp_username, self.smtp_password]):
+                print("Email configuration missing")
+                return False
             
-            msg.body = body
+            # Create message
+            message = MIMEMultipart("alternative")
+            message["Subject"] = subject
+            message["From"] = self.smtp_username
+            message["To"] = to_email
+            
+            # Add text and HTML parts
+            text_part = MIMEText(body, "plain")
+            message.attach(text_part)
+            
             if html_body:
-                msg.html = html_body
-                
-            self.mail.send(msg)
+                html_part = MIMEText(html_body, "html")
+                message.attach(html_part)
+            
+            # Send email
+            if self.use_tls:
+                server = smtplib.SMTP(self.smtp_server, self.smtp_port)
+                server.starttls()
+            else:
+                server = smtplib.SMTP_SSL(self.smtp_server, 465)
+            
+            server.login(self.smtp_username, self.smtp_password)
+            server.sendmail(self.smtp_username, to_email, message.as_string())
+            server.quit()
+            
+            print(f"Email sent successfully to {to_email}")
             return True
+            
         except Exception as e:
             print(f"Email sending failed: {str(e)}")
             return False
