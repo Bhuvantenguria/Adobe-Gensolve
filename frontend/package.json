@@ -1,6 +1,6 @@
 {
-  "name": "frontend",
-  "version": "0.1.0",
+  "name": "adobe-gensolve-frontend",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -13,7 +13,46 @@
     "react-icons": "^5.2.1",
     "react-konva": "^18.2.10",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-router-dom": "^6.8.0",
+    "react-hook-form": "^7.43.0",
+    "react-hot-toast": "^2.4.0",
+    "react-dropzone": "^14.2.3",
+    "react-color": "^2.19.3",
+    "react-image-crop": "^10.1.8",
+    "react-image-upload": "^1.0.0",
+    "react-image-gallery": "^1.2.11",
+    "react-lightbox-component": "^1.1.6",
+    "react-share": "^4.4.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-helmet": "^6.1.0",
+    "react-intersection-observer": "^9.5.2",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-syntax-highlighter": "^15.5.0",
+    "react-markdown": "^8.0.7",
+    "react-quill": "^2.0.0",
+    "react-datepicker": "^4.8.0",
+    "react-select": "^5.7.0",
+    "react-modal": "^3.16.1",
+    "react-tooltip": "^5.18.1",
+    "react-confetti": "^6.1.0",
+    "react-countup": "^6.4.2",
+    "react-spring": "^9.7.3",
+    "framer-motion": "^10.16.4",
+    "styled-components": "^6.0.7",
+    "tailwindcss": "^3.3.0",
+    "@tailwindcss/forms": "^0.5.6",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.24",
+    "lucide-react": "^0.263.1",
+    "clsx": "^2.0.0",
+    "class-variance-authority": "^0.7.0",
+    "date-fns": "^2.30.0",
+    "lodash": "^4.17.21",
+    "uuid": "^9.0.0",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^3.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,5 +77,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@types/lodash": "^4.14.195",
+    "@types/uuid": "^9.0.1"
   }
 }
